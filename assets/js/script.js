@@ -37,18 +37,16 @@ async function getAboutGitHub() {
       <article class="about-content">
 
         <h2>Sobre mim</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, 
-          adipisicing elit. Natus minus perspiciatis 
-          reprehenderit error voluptatibus labore 
-          assumenda doloremque quibusdam sequi? 
-          Distinctio autem sed laudantium nostrum 
-          reprehenderit eligendi animi adipisci 
-          a neque.</p>
-        <p>Mussum Ipsum, cacilds vidis litro abertis. 
-          Per aumento de cachacis, eu reclamis. 
-          Suco de cevadiss deixa as pessoas mais interessantis. 
-          Quem manda na minha terra sou euzis! 
-          Quem num gosta di mé, boa gentis num é.</p>
+        <p>Sou profissional em formado na área de Tecnologia, com foco em Análise e Desenvolvimento de Sistemas. 
+        Tenho experiência prática em desenvolvimento Full Stack, com conhecimentos em JavaScript, TypeScript, MySQL e NestJS, 
+        adquiridos por meio de projetos reais,
+         como sistemas bancários com operações CRUD e aplicações web completas.
+
+Atualmente, estou em constante evolução por meio de um bootcamp intensivo, onde desenvolvo tanto habilidades técnicas quanto comportamentais, 
+como trabalho em equipe, comunicação e resolução de problemas. 
+Também possuo inglês e espanhol voltados para leitura de documentação técnica, o que amplia minha autonomia no aprendizado.
+
+Busco uma oportunidade para aplicar meus conhecimentos, contribuir com soluções eficientes e continuar crescendo na área de tecnologia.</p>
 
         <!-- Links (GitHub + Curriculo) e Dados do GitHub -->
         <div class="about-buttons-data">
