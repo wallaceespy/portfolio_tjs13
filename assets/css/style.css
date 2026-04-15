@@ -84,6 +84,9 @@ body {
 
 main {
     flex: 1;
+    /*animação*/
+     position: relative;
+    z-index: 1;
 }
 
 /*Seções - Base Comum - Para todas as seções */ 
@@ -162,7 +165,9 @@ header {
     z-index: 1000; /* oque vai ficar em cima e que vai ficar embaixo*/
     width: 100%;
     height: 5rem; /*altura 80px de altura*/
-    border-bottom: var(--spacing-xs) solid var(--gray-200); /* borda inferior*/
+    /*border-bottom: var(--spacing-xs) solid var(--gray-200);*/ /* borda inferior*/
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.15);
+
     box-shadow: var(--shadow-sm);
     background-color: var(--purple-800);
 }
@@ -219,20 +224,28 @@ menu-list a {
 }
 
 .hero-content span {
-    font-size: var(--text-xl);
+    /*font-size: var(--text-xl);*/
+        color: var(--white);
+
     font-weight: 700;
 }
 
 .hero-content h1 {
-    font-size: var(--text-3xl);
+    /*font-size: var(--text-3xl);*/
+        color: var(--white);
+
     font-weight: 700;
 }
+
+
 
 .hero-content p,
 .about-content p,
 .contact-info p {
     font-size: var(--text-lg);
-    color: var(--gray-400);
+        color: rgba(255, 255, 255, 0.7);
+
+    /*: var(--gray-400);*/
 }
 
 .hero-image {
@@ -252,7 +265,7 @@ menu-list a {
 @keyframes float {
     0%
     100% {
-        transform:transparentY(0);
+        transform:translateY(0);
     }
     50% {
         transform:translateY(-1.25rem);
@@ -271,7 +284,7 @@ menu-list a {
     gap: var(--spacing-2xl);
     margin: var(--spacing-2xl)auto;
     border-radius: var(--radius-lg);
-    background-color: var(--gray-200);
+    background-color: #002a5765; /* azul escuro */
 }
 
 /*Painel Esquerdo (Imagem)*/
@@ -287,8 +300,25 @@ menu-list a {
     box-shadow: var(--shadow-lg);
 }
 
+/*alteração*/
+.about-content h2 {
+    color: var(--white);
+}
+
+.about-content p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.data-number {
+    color: #4fc3f7; /* azul neon */
+}
+
+.data-label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
 /*Painel Direito (Texto)*/
-.about-content h2,
+/*.about-content h2,*/
 .projects-container h2,
 .contact-info h2 {
     margin-bottom: var(--spacing-md);
@@ -352,7 +382,7 @@ menu-list a {
     text-align: center;
  }
 
- .project-swiper {
+ .projects-swiper {
     position: relative;
     width: 100%;
     padding: var(--spacing-sm) var(--spacing-xl) var(--spacing-xl);
@@ -516,19 +546,19 @@ menu-list a {
 
 .social-icon img {
     width: 100%;
-    filter: brightness(0) saturate(100%);
+    filter: brightness(0) invert(1); /* branco */
     transition: filter 0.3s ease;
 }
 
 .social-icon img:hover {
     filter: brightness(0) 
             saturate(100%) 
-            invert(42%) 
-            sepia(93%) 
-            saturate(1352%) 
-            hue-rotate(243deg) 
-            brightness(79%) 
-            contrast(91%);
+            invert(29%) 
+            sepia(98%) 
+            saturate(7490%) 
+            hue-rotate(215deg) 
+            brightness(85%) 
+            contrast(110%);
 }
 
 /* Formulario de Contato*/
@@ -579,6 +609,9 @@ form span {
     font-weight: 600;
     text-align: center;
     color: var(--white);
+    /*animção*/
+    position: relative;
+    z-index: 1;
  }
 
 
@@ -961,4 +994,45 @@ form span {
         form{
             width: 100%;
         }
+}
+
+/*Animação */
+#plexus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: #0a0a0f;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*tile neon*/
+.neon-title {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: #fff;
+    text-shadow:
+        0 0 7px #06298b,
+        0 0 10px #0207338c,
+        0 0 21px #0bacec,
+        0 0 42px #10eeee,
+        0 0 82px #1740f8;
+}
+
+.neon-label {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: #4fc3f7;
+    text-shadow:
+        0 0 7px #4fc3f7,
+        0 0 10px #4fc3f7,
+        0 0 21px #4fc3f7;
+}
+
+.neon-text {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 8px rgba(79, 195, 247, 0.5);
 }

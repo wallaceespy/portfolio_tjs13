@@ -37,16 +37,9 @@ async function getAboutGitHub() {
       <article class="about-content">
 
         <h2>Sobre mim</h2>
-        <p>Sou profissional em formado na área de Tecnologia, com foco em Análise e Desenvolvimento de Sistemas. 
-        Tenho experiência prática em desenvolvimento Full Stack, com conhecimentos em JavaScript, TypeScript, MySQL e NestJS, 
-        adquiridos por meio de projetos reais,
-         como sistemas bancários com operações CRUD e aplicações web completas.
+        <p>Olá, meu nome é Wallace tenho 31 anos, sou acadêmico em Análise e Desenvolvimento de Sistemas e atualmente estou fazendo o Bootcamp Javascript da generation . Tenho exeperiência prática no desenvolvimento de projetos como o blog pessoal e o projeto integrador (Seguro de Vida) o qual possui back-end estruturado.Também busco constantemente evoluir minhas soft skills e minha hard skill . 
 
-Atualmente, estou em constante evolução por meio de um bootcamp intensivo, onde desenvolvo tanto habilidades técnicas quanto comportamentais, 
-como trabalho em equipe, comunicação e resolução de problemas. 
-Também possuo inglês e espanhol voltados para leitura de documentação técnica, o que amplia minha autonomia no aprendizado.
-
-Busco uma oportunidade para aplicar meus conhecimentos, contribuir com soluções eficientes e continuar crescendo na área de tecnologia.</p>
+ Conheça mais sobre meus projetos no meu GitHub e acompanhe minha trajetória profissional pelo meu LinkedIn.”</p>
 
         <!-- Links (GitHub + Curriculo) e Dados do GitHub -->
         <div class="about-buttons-data">
@@ -54,7 +47,7 @@ Busco uma oportunidade para aplicar meus conhecimentos, contribuir com soluçõe
           <!-- Links -->
           <div class="buttons-container">
             <a href="${perfil.html_url}" target="_blank" class="botao">GitHub</a>
-            <a href="#" target="_blank" class="botao-outline">Currículo</a>
+            <a href="https://drive.google.com/file/d/1UuxkJY0TAyrbK0sZi4vulPGOa19oPhpx/view?usp=drive_link" target="_blank" class="botao-outline">Currículo</a>
           </div>
 
           <!-- Dados - GitHub -->
@@ -325,3 +318,67 @@ getAboutGitHub();
 
 // Executar a função getProjects GitHub
 getProjectsGitHub();
+
+
+
+//Animação 
+const canvas = document.getElementById('plexus');
+const ctx = canvas.getContext('2d');
+let W = canvas.width = window.innerWidth;
+let H = canvas.height = window.innerHeight;
+const PARTICLE_COUNT = 90;
+const MAX_DIST = 160;
+const MOUSE_RADIUS = 200;
+let mouse = { x: W/2, y: H/2 };
+
+class Particle {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = Math.random() * W; this.y = Math.random() * H;
+    // Aumentado de 0.5 para 2.0 para maior velocidade
+    this.vx = (Math.random() - 0.5) * 2.0; 
+    this.vy = (Math.random() - 0.5) * 2.0; 
+    this.r = Math.random() * 1.5 + 0.5;
+  }
+  update() {
+    this.x += this.vx; this.y += this.vy;
+    if (this.x < 0 || this.x > W) this.vx *= -1;
+    if (this.y < 0 || this.y > H) this.vy *= -1;
+  }
+}
+
+const particles = Array.from({ length: PARTICLE_COUNT }, () => new Particle());
+document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i+1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < MAX_DIST) {
+        ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(180,200,255,${(1-dist/MAX_DIST)*0.35})`;
+        ctx.lineWidth = 0.6; ctx.stroke();
+      }
+    }
+    const mdx = particles[i].x - mouse.x, mdy = particles[i].y - mouse.y;
+    const md = Math.sqrt(mdx*mdx + mdy*mdy);
+    if (md < MOUSE_RADIUS) {
+      ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y);
+      ctx.lineTo(mouse.x, mouse.y);
+      ctx.strokeStyle = `rgba(100,160,255,${(1-md/MOUSE_RADIUS)*0.6})`;
+      ctx.lineWidth = 0.8; ctx.stroke();
+    }
+  }
+  for (const p of particles) {
+    const g = Math.max(0, 1 - Math.hypot(p.x-mouse.x, p.y-mouse.y)/MOUSE_RADIUS);
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.r + g*1.5, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(${180+g*75},${200+g*55},255,${0.7+g*0.3})`; ctx.fill();
+    p.update();
+  }
+  requestAnimationFrame(draw);
+}
+window.addEventListener('resize', () => { W = canvas.width = innerWidth; H = canvas.height = innerHeight; particles.forEach(p => p.reset()); });
+draw(); 
