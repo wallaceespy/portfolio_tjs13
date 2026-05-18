@@ -39,7 +39,7 @@ async function getAboutGitHub() {
         <h2>Sobre mim</h2>
         <p>Olá, meu nome é Wallace tenho 31 anos, sou acadêmico em Análise e Desenvolvimento de Sistemas e atualmente fiz o Bootcamp Javascript da generation . Tenho exeperiência prática no desenvolvimento de projetos como o blog pessoal e o projeto integrador (Seguro de Vida) o qual possui back-end estruturado.Também busco constantemente evoluir minhas soft skills e minha hard skill . 
 
- Conheça mais sobre meus projetos no meu GitHub e acompanhe minha trajetória profissional pelo meu LinkedIn.”</p>
+ Conheça mais sobre meus projetos no meu GitHub e acompanhe minha trajetória profissional pelo meu LinkedIn.</p>
 
         <!-- Links (GitHub + Curriculo) e Dados do GitHub -->
         <div class="about-buttons-data">
