@@ -37,7 +37,7 @@ async function getAboutGitHub() {
       <article class="about-content">
 
         <h2>Sobre mim</h2>
-        <p>Olá, meu nome é Wallace tenho 31 anos, sou acadêmico em Análise e Desenvolvimento de Sistemas e atualmente estou fazendo o Bootcamp Javascript da generation . Tenho exeperiência prática no desenvolvimento de projetos como o blog pessoal e o projeto integrador (Seguro de Vida) o qual possui back-end estruturado.Também busco constantemente evoluir minhas soft skills e minha hard skill . 
+        <p>Olá, meu nome é Wallace tenho 31 anos, sou acadêmico em Análise e Desenvolvimento de Sistemas e atualmente fiz o Bootcamp Javascript da generation . Tenho exeperiência prática no desenvolvimento de projetos como o blog pessoal e o projeto integrador (Seguro de Vida) o qual possui back-end estruturado.Também busco constantemente evoluir minhas soft skills e minha hard skill . 
 
  Conheça mais sobre meus projetos no meu GitHub e acompanhe minha trajetória profissional pelo meu LinkedIn.”</p>
 
@@ -47,7 +47,7 @@ async function getAboutGitHub() {
           <!-- Links -->
           <div class="buttons-container">
             <a href="${perfil.html_url}" target="_blank" class="botao">GitHub</a>
-            <a href="https://drive.google.com/file/d/1svZKNSWalZJmRxQSx9PQOQwb3KpSnH5a/view?usp=sharing" target="_blank" class="botao-outline">Currículo</a>
+            <a href="https://drive.google.com/file/d/1hXb0Yannq-Y0hZBQQwGiJuLOCkuNGh7_/view?usp=drive_link" target="_blank" class="botao-outline">Currículo</a>
           </div>
 
           <!-- Dados - GitHub -->
